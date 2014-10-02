@@ -66,6 +66,14 @@ val array : ArrayList[IdCard] = new ArrayList()
 val webarray: ArrayList[WebLogin] = new ArrayList()
 val bankarray: ArrayList[BankAccount] = new ArrayList()
 
+@RequestMapping(value = Array(""), method = Array(RequestMethod.GET))
+@ResponseBody
+def welcomerequest(): String= {
+
+return "Welcome to the wallet application";
+
+}
+
 @RequestMapping(value = Array("/users"), method = Array(RequestMethod.POST), consumes = Array("application/json"), produces = Array("application/json"))
 @ResponseBody
 def respondtorequest(@RequestBody userObj : CreateUser): CreateUser = {
